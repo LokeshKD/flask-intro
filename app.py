@@ -8,12 +8,13 @@ from functools import wraps
 
 
 app = Flask(__name__)
-app.secret_key = "blah"
+#Config
+# From config.py
+#app.config.from_object('config.DevConfig')
+#app.config.from_object('config.ProdConfig')
+import os
+app.config.from_object(os.environ['APP_SETTINGS'])
 
-#app.database = "sample.db"
-# This is when moving from dealing with direct db to ORM.
-# using posts.db instead of sample.db
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 db = SQLAlchemy(app)
 
 from models import BlogPost
@@ -71,4 +72,4 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
