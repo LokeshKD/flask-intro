@@ -1,1 +1,5 @@
 heroku config:set APP_SETTINGS=config.ProdConfig --remote heroku
+
+heroku addons:add heroku-postgresql:dev
+
+heroku pg:promote HEROKU_POSTGRESQL_YELLOW_URL
