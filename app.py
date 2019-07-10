@@ -15,6 +15,8 @@ app = Flask(__name__)
 import os
 app.config.from_object(os.environ['APP_SETTINGS'])
 
+app.secret_key = "blah"
+
 db = SQLAlchemy(app)
 
 from models import BlogPost

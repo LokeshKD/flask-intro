@@ -10,7 +10,9 @@ class BaseConfig(object):
 
 class DevConfig(BaseConfig):
     DEBUG = True
+    secret_key = "blah"
 
 
 class ProdConfig(BaseConfig):
     DEBUG = False
+    secret_key = "blah"

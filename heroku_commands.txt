@@ -3,3 +3,11 @@ heroku config:set APP_SETTINGS=config.ProdConfig --remote heroku
 heroku addons:add heroku-postgresql:dev
 
 heroku pg:promote HEROKU_POSTGRESQL_YELLOW_URL
+
+
+### This is for changing DATABASE_URL with speciic DB being used.
+# export DATABASE_URL="sqlite:///posts.db"
+expot DATABASE_URL="postgresql://localhost/discover_flask_dev"
+
+# Now create the Database. -- From psql prompt.
+CREATE DATABASE discover_flask_dev;
