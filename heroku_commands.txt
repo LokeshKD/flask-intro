@@ -11,3 +11,8 @@ expot DATABASE_URL="postgresql://localhost/discover_flask_dev"
 
 # Now create the Database. -- From psql prompt.
 CREATE DATABASE discover_flask_dev;
+
+python manage.py db init
+python manage.py db migrate
+python manage.py db upgrade/downgrade
+
