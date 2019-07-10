@@ -16,3 +16,10 @@ python manage.py db init
 python manage.py db migrate
 python manage.py db upgrade/downgrade
 
+heroku run python manage.py db upgrade
+
+# manual updates to postgres DB in heroku.
+heroku pg:psql
+
+# Run the same commands as on the local server.
+# INSERT and UPDATE.
