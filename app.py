@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask import url_for, redirect, session, flash, g
+from flask_bcrypt import Bcrypt
 # This is when moving from dealing with direct db to ORM.
 #from flask.ext.sqlalchemy import SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
@@ -8,6 +9,7 @@ from functools import wraps
 
 
 app = Flask(__name__)
+bcrypt = Bcrypt(app)
 #Config
 # From config.py
 #app.config.from_object('config.DevConfig')

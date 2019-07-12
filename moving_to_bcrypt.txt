@@ -1,0 +1,9 @@
+
+STEPS:
+
+1. Updata app.py to setup Bcrypt
+2. Update the user model to hash the password.
+3. Apply model changes with db migration.
+4. DELETE all user data in the users table within postgres shell.
+5. Add new users to the table.
+6. Manually test to ensure passwords are hashed.
