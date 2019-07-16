@@ -3,16 +3,19 @@ import os
 # Base Config
 class BaseConfig(object):
     DEBUG = False
-    # Try replacig secret_key with os.urandom(24)
-    secret_key = "blah"
-    #SQLALCHEMY_DATABASE_URI = 'sqlite:///posts.db'
+    SECRET_KEY = "blahblah"
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+
+class TestConfig(BaseConfig):
+    DEBUG = True
+    TESTING = True
+    WTF_CSRF_ENABLED = False
+    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory"
+
 
 class DevConfig(BaseConfig):
     DEBUG = True
-    secret_key = "blah"
 
 
 class ProdConfig(BaseConfig):
     DEBUG = False
-    secret_key = "blah"

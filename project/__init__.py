@@ -13,7 +13,7 @@ import os
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
-app.secret_key = "blah"
+#app.secret_key = "blah"
 db = SQLAlchemy(app)
 
 from project.users.views import users_blueprint
