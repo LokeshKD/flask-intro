@@ -81,6 +81,18 @@ class UsersViewsTests(BaseTestCase):
             self.assertIn(b'You were just logged out', response.data)
             self.assertFalse(current_user.is_active())
 
+    # TestCase for correct login credentials
+    def test_user_registration(self):
+        with self.client:
+            response = self.client.post(
+                '/register',
+                data=dict(username='testing', email='email@email.com',
+                            password='testing', confirm='testing'),
+                follow_redirects=True)
+            self.assertIn(b'Welcome to Flask', response.data)
+            self.assertTrue(current_user.name == 'testing')
+            self.assertTrue(current_user.is_active())
+
 
 
 if __name__ == '__main__':
